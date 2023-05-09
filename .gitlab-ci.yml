@@ -79,14 +79,14 @@ variables:
 
 
 
-.pup_6_x: &pup_6_x
+.pup_8_x: &pup_7_x
   image: 'ruby:2.6'
   variables:
     PUPPET_VERSION: '~> 6.0'
     BEAKER_PUPPET_COLLECTION: 'puppet6'
     MATRIX_RUBY_VERSION: '2.6'
 
-.pup_7_x: &pup_7_x
+.pup_8_x: &pup_8_x
   image: 'ruby:2.7'
   variables:
     PUPPET_VERSION: '~> 7.0'
@@ -110,18 +110,18 @@ variables:
 # Pipeline / testing matrix
 #=======================================================================
 
-pup6x_spec_test:
-  <<: *pup_6_x
+pup8x_spec_test:
+  <<: *pup_8_x
   <<: *spec_test
 
-pup6x_syntax_test:
-  <<: *pup_6_x
+pup8x_syntax_test:
+  <<: *pup_8_x
   <<: *syntax_test
 
-pup7x_spec_test:
-  <<: *pup_7_x
+pup8x_spec_test:
+  <<: *pup_8_x
   <<: *spec_test
 
-pup7x_syntax_test:
-  <<: *pup_7_x
+pup8x_syntax_test:
+  <<: *pup_8_x
   <<: *syntax_test
